@@ -1,0 +1,140 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.noticias-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.noticia-card {
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e7eaf0;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(16, 30, 58, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.noticia-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(16, 30, 58, 0.12);
+}
+
+.imagen-noticia {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 170px;
+  overflow: hidden;
+}
+
+.imagen-tecnologia {
+  background: linear-gradient(135deg, #dce9ff, #a8c7ff);
+}
+
+.imagen-economia {
+  background: linear-gradient(135deg, #d8f5e7, #8ed8b7);
+}
+
+.imagen-deportes {
+  background: linear-gradient(135deg, #ffebcc, #ffc66e);
+}
+
+.imagen-icono {
+  font-size: 64px;
+  z-index: 1;
+}
+
+.etiqueta-imagen {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 6px 11px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #17243b;
+}
+
+.imagen-decoracion {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+}
+
+.noticia-contenido {
+  padding: 22px;
+}
+
+.noticia-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  color: #718096;
+  font-size: 12px;
+}
+
+.noticia-card h3 {
+  margin: 14px 0 10px;
+  color: #17243b;
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.noticia-card p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.noticia-acciones {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.leer-mas {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #2563eb;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.boton-corazon {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #64748b;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.boton-corazon.favorita {
+  color: #e11d48;
+  background: #fff1f2;
+  border-color: #fecdd3;
+}
+
+@media (max-width: 900px) {
+  .noticias-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .noticias-grid {
+    grid-template-columns: 1fr;
+  }
+}

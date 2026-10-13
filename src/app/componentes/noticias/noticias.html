@@ -1,0 +1,45 @@
+<div class="noticias-grid">
+  @for (noticia of noticias; track noticia.id) {
+    <article class="noticia-card">
+      <div
+        class="imagen-noticia"
+        [class]="'imagen-noticia imagen-' + noticia.tema"
+      >
+        <span class="imagen-icono">{{ noticia.icono }}</span>
+        <span class="etiqueta-imagen">{{ noticia.categoria }}</span>
+        <span class="imagen-decoracion"></span>
+      </div>
+
+      <div class="noticia-contenido">
+        <div class="noticia-meta">
+          <span>{{ noticia.fecha }}</span>
+          <span>·</span>
+          <span>{{ noticia.autor }}</span>
+        </div>
+
+        <h3>{{ noticia.titulo }}</h3>
+        <p>{{ noticia.resumen }}</p>
+
+        <div class="noticia-acciones">
+          <button
+            type="button"
+            class="leer-mas"
+            (click)="verDetalle(noticia.id)"
+          >
+            Leer noticia →
+          </button>
+
+          <button
+            type="button"
+            class="boton-corazon"
+            [class.favorita]="esFavorita(noticia.id)"
+            [attr.aria-label]="esFavorita(noticia.id) ? 'Quitar de favoritos' : 'Agregar a favoritos'"
+            (click)="alternarFavorito(noticia.id)"
+          >
+            {{ esFavorita(noticia.id) ? '♥' : '♡' }}
+          </button>
+        </div>
+      </div>
+    </article>
+  }
+</div>
